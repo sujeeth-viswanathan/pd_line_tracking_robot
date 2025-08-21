@@ -1,0 +1,35 @@
+# Arduino junk
+*.hex
+*.elf
+*.bin
+*.map
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# VS Code junk
+.vscode/
+
+# PlatformIO build
+.pio/
+build/
+
+# Logs and backups
+*.log
+*.tmp
+*.bak
+
+# Video or demo files (store separately or in releases)
+*.mp4
+*.avi
+*.mov
+
+# Compressed files
+*.zip
+*.rar
+*.tar.gz
+
+# Optional: ignore generated images or diagrams
+*.png
+*.jpg
