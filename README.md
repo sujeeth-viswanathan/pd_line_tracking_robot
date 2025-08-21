@@ -33,9 +33,13 @@ License: [Apache 2.0](LICENSE)
 - Visual debugging via Serial Monitor
 
 ---
-## visuals 
- - [Robot Photo] (images/osoyoo car.jpg)
- - [Wiring Diagram] (images/ossoyoo car 2.jpg)
+## visuals
+## 📷 Robot Photo
+![Robot Photo](images/osoyoo_car.jpg)
+
+## 🔌 Wiring Diagram
+![Wiring Diagram](images/osoyoo_car_2.jpg)
+
 ## 🧠 Control Logic Overview
 
 ### PD Control Formula:
