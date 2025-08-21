@@ -28,8 +28,6 @@ This project implements a closed-loop PD controller for line-following using an 
 ## 🧠 Control Logic
 The robot computes a line position error from weighted sensor readings and applies a PD formula to generate correction values that adjust the left and right motor speeds dynamically.
 
-## 📽️ Demo
-*A demo video is recommended here*
 
 ## 📎 License
 Apache License 2.0
