@@ -1,34 +1,102 @@
-# pd_line_tracking_robot.ino
+# 🚗 PD Line Tracking Robot
 
-# PD Line Tracking Robot (Arduino + OSOYOO V2.1)
+A closed-loop PD (Proportional-Derivative) controller-based line-following robot built using the OSOYOO V2.1 Arduino platform. This robot detects and follows a black line using a 5-IR sensor array, adjusting motor speeds in real-time for accurate and stable path tracking.
 
-This project implements a closed-loop PD controller for line-following using an Arduino-based OSOYOO V2.1 robot car. The robot uses a 5-channel IR sensor array to detect a black line and dynamically adjusts motor speeds based on proportional and derivative feedback.
+---
 
-## 🔧 Hardware Used
-- OSOYOO V2.1 Arduino Robot Car Kit
-- Arduino Uno
-- L298N Motor Driver
-- 5x IR Sensors
-- 2x DC Motors (differential drive)
+## 👨‍💻 Developed by
+**Sujeeth Viswanathan**  
+License: [Apache 2.0](LICENSE)
 
-## ⚙️ Features
-- Real-time line-following using 5 IR sensors
-- PD control loop for smooth turns and fast recovery
-- Stable lap tracking with zero off-track events at PWM 160
-- Modular code: easy to debug, extend, and modify
+---
 
-## 📊 Performance
-| Metric            | Value         |
-|------------------|---------------|
-| Lap Time         | 15.0 seconds  |
-| Controller Type  | PD (Kp = 25, Kd = 15) |
-| Max Speed (PWM)  | 160           |
-| Off-Track Events | 0             |
+## 📦 Hardware Used
 
-## 🧠 Control Logic
-The robot computes a line position error from weighted sensor readings and applies a PD formula to generate correction values that adjust the left and right motor speeds dynamically.
+| Component                 | Description                                  |
+|--------------------------|----------------------------------------------|
+| Arduino Uno              | Main microcontroller                         |
+| OSOYOO V2.1 Robot Chassis| Robot platform with motor driver (L298N)     |
+| L298N Motor Driver       | Dual H-Bridge motor controller               |
+| 5x IR Sensors            | For black-line detection                     |
+| 2x DC Motors             | Differential drive                           |
+| Power Supply             | 2x 18650 or 9V battery pack                  |
 
+---
 
-## 📎 License
-Apache License 2.0
+## 🚀 Features
 
+- Real-time black line detection using 5 IR sensors
+- PD control loop for dynamic motor speed adjustment
+- Smooth, accurate turns even at higher speeds
+- Stop condition detection (e.g. full black line)
+- Modular code structure (easy to tune & extend)
+- Visual debugging via Serial Monitor
+
+---
+
+## 🧠 Control Logic Overview
+
+### PD Control Formula:
+
+correction = Kp * error + Kd * (error - lastError)
+
+- **Kp = 25.0**, **Kd = 15.0**, **Ki = 0.0**
+- Sensor weights: `[-200, -100, 0, +100, +200]`
+- The correction is applied to the left and right motors to steer the robot toward the center of the line.
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1. Wiring Guide
+- IR Sensors → A0 to A4
+- Motor Direction Pins:
+  - Left: D7 (IN3), D8 (IN4)
+  - Right: D12 (IN1), D11 (IN2)
+- Motor Speed (PWM):
+  - Left: D6 (ENB)
+  - Right: D9 (ENA)
+
+### 2. Arduino IDE Setup
+- Open `pd_line_tracking_robot.ino`
+- Board: **Arduino Uno**
+- Baud rate: **9600**
+- Upload code, then open Serial Monitor for debug output
+
+---
+
+## 🛠️ Tuning Tips
+
+- Adjust `BASE_SPEED`, `Kp`, `Kd` values in code to adapt for:
+  - Different floor reflectivity
+  - Track size or turns
+  - Motor calibration
+
+- Use Serial Monitor output to read sensor values (`e.g. "00100"`, `"01100"`, etc.) for live debugging.
+
+---
+
+## 📊 Performance Summary
+
+| Metric             | Value             |
+|--------------------|------------------|
+| Track Type         | Circular loop    |
+| Lap Time           | 15 seconds       |
+| Controller         | PD               |
+| Max PWM Speed      | 160              |
+| Off-track Events   | 0                |
+| Behavior           | Smooth, stable   |
+
+---
+
+## 📚 References & Credits
+
+- [OSOYOO V2.1 Car Docs](https://osoyoo.com/?p=33129)
+- [PID Control - Arduino](https://www.youtube.com/watch?v=0vqWyramGy8)
+- [Line Follower Robot Tutorial](https://www.electronicwings.com/nodemcu/line-follower-robot-using-ir-sensor)
+
+---
+
+## 📝 License
+
+This project is licensed under the **Apache 2.0 License**. See the [LICENSE](LICENSE) file for full details.
