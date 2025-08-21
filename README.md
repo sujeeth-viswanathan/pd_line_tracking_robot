@@ -38,7 +38,7 @@ License: [Apache 2.0](LICENSE)
 ![Robot Photo](images/osoyoo_car.jpg)
 
 ## 🔌 Wiring Diagram
-![Wiring Diagram](images/osoyoo_car_2.jpg)
+![Wiring Diagram](images/ossoyoo_car_2.jpg)
 
 ## 🧠 Control Logic Overview
 
