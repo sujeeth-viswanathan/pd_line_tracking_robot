@@ -35,7 +35,7 @@ License: [Apache 2.0](LICENSE)
 ---
 ## visuals 
  - [Robot Photo] (images/osoyoo car.jpg)
- - [Wiring Diagram] (
+ - [Wiring Diagram] (images/ossoyoo car 2.jpg)
 ## 🧠 Control Logic Overview
 
 ### PD Control Formula:
