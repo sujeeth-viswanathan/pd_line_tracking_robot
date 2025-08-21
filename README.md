@@ -35,10 +35,10 @@ License: [Apache 2.0](LICENSE)
 ---
 ## visuals
 ## 📷 Robot Photo
-![Robot Photo](images/osoyoo_car.jpg)
+![Robot Photo](images/osoyoo%20car.jpg)
 
 ## 🔌 Wiring Diagram
-![Wiring Diagram](images/ossoyoo_car_2.jpg)
+![Wiring Diagram](images/ossoyoo%20car%202.jpg)
 
 ## 🧠 Control Logic Overview
 
