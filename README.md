@@ -33,7 +33,9 @@ License: [Apache 2.0](LICENSE)
 - Visual debugging via Serial Monitor
 
 ---
-
+## visuals 
+![Robot Photo]
+![Wiring Diagram]
 ## 🧠 Control Logic Overview
 
 ### PD Control Formula:
