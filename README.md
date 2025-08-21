@@ -32,4 +32,5 @@ The robot computes a line position error from weighted sensor readings and appli
 *A demo video is recommended here*
 
 ## 📎 License
+Apache License 2.0
 
